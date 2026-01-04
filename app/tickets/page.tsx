@@ -27,6 +27,13 @@ export default function TicketsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+  const [showForm, setShowForm] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    title: "",
+    author: "",
+    description: "",
+  });
 
   useEffect(() => {
     if (status === "unauthenticated") {
