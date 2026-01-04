@@ -83,8 +83,8 @@ export default function Home() {
 
   if (status === "loading" || (status === "authenticated" && loading)) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <p className="text-gray-600">Loading...</p>
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+        <p className="text-slate-600">Loading...</p>
       </div>
     );
   }
@@ -94,29 +94,29 @@ export default function Home() {
     const isOwner = userOrgs.length > 0;
 
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Header */}
-          <div className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-900">
-              Welcome, {session.user.firstName || "User"}
-            </h1>
-            <p className="text-gray-600 mt-1">
-              Manage your organizations and tickets from your dashboard
-            </p>
+          <div className="flex justify-between items-end mb-8">
+            <div>
+              <h1 className="text-2xl font-bold text-slate-900">Dashboard</h1>
+              <p className="text-slate-500 mt-1">
+                Welcome back, {session.user.firstName || "User"}
+              </p>
+            </div>
           </div>
 
           {/* Quick Actions Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {/* Explore Organizations */}
             <Link
               href="/orgs"
-              className="bg-white rounded-lg shadow p-6 hover:shadow-md transition-shadow"
+              className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm hover:shadow-md transition-all group"
             >
-              <div className="flex items-center mb-2">
-                <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center mr-3">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 rounded-md bg-blue-50 flex items-center justify-center mr-3 group-hover:bg-blue-100 transition-colors">
                   <svg
-                    className="w-6 h-6 text-blue-600"
+                    className="w-5 h-5 text-blue-600"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -129,24 +129,24 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="text-base font-semibold text-slate-900">
                   Explore Organizations
                 </h3>
               </div>
-              <p className="text-sm text-gray-600">
-                Browse and discover organizations to follow and contribute to
+              <p className="text-sm text-slate-500">
+                Browse and discover organizations to follow and contribute to.
               </p>
             </Link>
 
             {/* My Tickets */}
             <Link
               href="/tickets"
-              className="bg-white rounded-lg shadow p-6 hover:shadow-md transition-shadow"
+              className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm hover:shadow-md transition-all group"
             >
-              <div className="flex items-center mb-2">
-                <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center mr-3">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 rounded-md bg-green-50 flex items-center justify-center mr-3 group-hover:bg-green-100 transition-colors">
                   <svg
-                    className="w-6 h-6 text-green-600"
+                    className="w-5 h-5 text-green-600"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -159,25 +159,24 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="text-base font-semibold text-slate-900">
                   My Tickets
                 </h3>
               </div>
-              <p className="text-sm text-gray-600">
-                View and manage tickets you&apos;ve submitted as bugs, features,
-                or feedback
+              <p className="text-sm text-slate-500">
+                View and manage tickets you&apos;ve submitted as bugs or features.
               </p>
             </Link>
 
             {/* Reddit Digest */}
             <Link
               href="/reddit-digest"
-              className="bg-white rounded-lg shadow p-6 hover:shadow-md transition-shadow"
+              className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm hover:shadow-md transition-all group"
             >
-              <div className="flex items-center mb-2">
-                <div className="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center mr-3">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 rounded-md bg-orange-50 flex items-center justify-center mr-3 group-hover:bg-orange-100 transition-colors">
                   <svg
-                    className="w-6 h-6 text-orange-600"
+                    className="w-5 h-5 text-orange-600"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -190,12 +189,12 @@ export default function Home() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="text-base font-semibold text-slate-900">
                   Reddit Digest
                 </h3>
               </div>
-              <p className="text-sm text-gray-600">
-                Get AI-powered feedback summaries from Reddit posts about your product
+              <p className="text-sm text-slate-500">
+                Get AI-powered feedback summaries from Reddit posts.
               </p>
             </Link>
 
@@ -203,12 +202,12 @@ export default function Home() {
             {!isOwner && (
               <Link
                 href="/orgs"
-                className="bg-white rounded-lg shadow p-6 hover:shadow-md transition-shadow"
+                className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm hover:shadow-md transition-all group"
               >
-                <div className="flex items-center mb-2">
-                  <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center mr-3">
+                <div className="flex items-center mb-4">
+                  <div className="w-10 h-10 rounded-md bg-purple-50 flex items-center justify-center mr-3 group-hover:bg-purple-100 transition-colors">
                     <svg
-                      className="w-6 h-6 text-purple-600"
+                      className="w-5 h-5 text-purple-600"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -221,12 +220,12 @@ export default function Home() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h3 className="text-base font-semibold text-slate-900">
                     Create Organization
                   </h3>
                 </div>
-                <p className="text-sm text-gray-600">
-                  Start your own organization to collect and manage feedback
+                <p className="text-sm text-slate-500">
+                  Start your own organization to collect and manage feedback.
                 </p>
               </Link>
             )}
@@ -234,57 +233,55 @@ export default function Home() {
 
           {/* Owner Section: Recent Tickets for My Organization */}
           {isOwner && (
-            <div className="bg-white rounded-lg shadow p-6">
-              <div className="flex justify-between items-center mb-4">
-                <h2 className="text-xl font-bold text-gray-900">
-                  Recent Tickets for My Organization
+            <div className="bg-white rounded-lg border border-slate-200 shadow-sm">
+              <div className="px-6 py-4 border-b border-slate-200 flex justify-between items-center">
+                <h2 className="font-semibold text-slate-900">
+                  Recent Tickets
                 </h2>
                 <Link
                   href={`/my-organization`}
                   className="text-sm font-medium text-blue-600 hover:text-blue-700"
                 >
-                  View All →
+                  View All
                 </Link>
               </div>
 
               {recentTickets.length > 0 ? (
-                <div className="space-y-3">
+                <div className="divide-y divide-slate-200">
                   {recentTickets.map((ticket) => (
                     <div
                       key={ticket.id}
-                      className="border border-gray-200 rounded-lg p-4 hover:bg-gray-50 transition"
+                      className="p-4 hover:bg-slate-50 transition flex items-center justify-between group"
                     >
-                      <Link href={`/tickets/${ticket.id}`}>
-                        <h4 className="font-semibold text-gray-900">
-                          {ticket.title}
-                        </h4>
-                        <p className="text-sm text-gray-600 mt-1">
-                          {ticket.description?.substring(0, 100)}
-                          {(ticket.description?.length ?? 0) > 100 ? "..." : ""}
-                        </p>
-                        <div className="flex gap-2 mt-2">
-                          <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-blue-100 text-blue-800">
-                            {ticket.tag}
-                          </span>
-                          <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-gray-100 text-gray-800">
-                            {ticket.votes || 0} votes
-                          </span>
-                          {ticket.reportedBy && (
-                            <span className="text-xs text-gray-500">
-                              by {ticket.reportedBy.name}
+                      <Link href={`/tickets/${ticket.id}`} className="flex-1">
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <h4 className="font-medium text-slate-900 group-hover:text-blue-600 transition-colors">
+                              {ticket.title}
+                            </h4>
+                            <p className="text-sm text-slate-500 mt-1 line-clamp-1">
+                              {ticket.description}
+                            </p>
+                          </div>
+                          <div className="flex items-center gap-3 ml-4">
+                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700">
+                              {ticket.tag}
                             </span>
-                          )}
+                            <span className="text-sm text-slate-500">
+                              {ticket.votes || 0} votes
+                            </span>
+                          </div>
                         </div>
                       </Link>
                     </div>
                   ))}
                 </div>
               ) : (
-                <div className="text-center py-8 text-gray-500">
-                  <p>No recent tickets for your organization yet.</p>
+                <div className="text-center py-12 text-slate-500">
+                  <p>No recent tickets found.</p>
                   <Link
                     href={`/orgs/${userOrgs[0].id}`}
-                    className="text-blue-600 hover:text-blue-700 text-sm mt-2 inline-block"
+                    className="text-blue-600 hover:text-blue-700 text-sm mt-2 inline-block font-medium"
                   >
                     Go to your organization
                   </Link>
@@ -295,11 +292,17 @@ export default function Home() {
 
           {/* Non-Owner: Placeholder */}
           {!isOwner && (
-            <div className="bg-white rounded-lg shadow p-6 text-center">
-              <p className="text-gray-600">
-                You don&apos;t own any organizations yet. Create one to start
-                managing feedback!
-              </p>
+            <div className="bg-white rounded-lg border border-slate-200 shadow-sm p-8 text-center">
+              <div className="max-w-md mx-auto">
+                <h3 className="text-lg font-medium text-slate-900 mb-2">No Organization Found</h3>
+                <p className="text-slate-500 mb-6">
+                  You don&apos;t own any organizations yet. Create one to start
+                  managing feedback!
+                </p>
+                <Link href="/orgs" className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                  Create Organization
+                </Link>
+              </div>
             </div>
           )}
         </div>
@@ -309,25 +312,60 @@ export default function Home() {
 
   // Show landing page for non-authenticated users
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div className="text-center">
-          <h1 className="text-5xl font-extrabold text-gray-900 sm:text-6xl md:text-7xl">
-            ComLab
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 text-center lg:text-left lg:flex lg:items-center">
+        <div className="lg:w-1/2">
+          <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl md:text-6xl">
+            Customer feedback, <span className="text-blue-600">simplified.</span>
           </h1>
-          <p className="mt-6 max-w-2xl mx-auto text-xl text-gray-600">
-            Community-driven product feedback and roadmap platform that turns
-            unstructured discourse into actionable development insights.
+          <p className="mt-4 text-xl text-slate-500 max-w-2xl mx-auto lg:mx-0">
+            Turn community discourse into actionable product insights. The enterprise-grade platform for modern product teams.
           </p>
+          <div className="mt-8 flex gap-4 justify-center lg:justify-start">
+            <Link
+              href="/api/auth/signin"
+              className="rounded-md bg-blue-600 px-6 py-3 text-white font-medium hover:bg-blue-700 transition-colors shadow-sm"
+            >
+              Get Started Free
+            </Link>
+            <Link
+              href="#features"
+              className="rounded-md bg-white px-6 py-3 text-slate-700 font-medium border border-slate-300 hover:bg-slate-50 transition-colors shadow-sm"
+            >
+              Learn More
+            </Link>
+          </div>
         </div>
+        <div className="hidden lg:block lg:w-1/2 pl-12">
+          <div className="bg-slate-50 rounded-xl p-8 border border-slate-200 shadow-lg transform rotate-2 hover:rotate-0 transition-transform duration-500">
+            <div className="bg-white rounded-lg shadow-sm border border-slate-200 p-4 mb-4">
+              <div className="h-4 w-1/3 bg-slate-200 rounded mb-2"></div>
+              <div className="h-3 w-3/4 bg-slate-100 rounded"></div>
+            </div>
+            <div className="bg-white rounded-lg shadow-sm border border-slate-200 p-4 mb-4">
+              <div className="h-4 w-1/2 bg-slate-200 rounded mb-2"></div>
+              <div className="h-3 w-full bg-slate-100 rounded"></div>
+            </div>
+            <div className="bg-white rounded-lg shadow-sm border border-slate-200 p-4">
+              <div className="h-4 w-2/3 bg-slate-200 rounded mb-2"></div>
+              <div className="h-3 w-5/6 bg-slate-100 rounded"></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <div className="mt-16">
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
-            Features
-          </h3>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4">
+      {/* Features Section */}
+      <div id="features" className="bg-slate-50 py-24 border-t border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-slate-900">Enterprise Features</h2>
+            <p className="mt-4 text-lg text-slate-500">Everything you need to manage product feedback at scale.</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-lg border border-slate-200 p-8 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center mb-6">
                 <svg
                   className="w-6 h-6 text-blue-600"
                   fill="none"
@@ -342,17 +380,17 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">
+              <h4 className="text-xl font-semibold text-slate-900 mb-3">
                 Organize Feedback
               </h4>
-              <p className="text-gray-600">
+              <p className="text-slate-500 leading-relaxed">
                 Collect and categorize feature requests, bugs, and feedback in
-                one place.
+                one centralized hub.
               </p>
             </div>
 
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <div className="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center mb-4">
+            <div className="bg-white rounded-lg border border-slate-200 p-8 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 rounded-lg bg-green-50 flex items-center justify-center mb-6">
                 <svg
                   className="w-6 h-6 text-green-600"
                   fill="none"
@@ -367,17 +405,17 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">
+              <h4 className="text-xl font-semibold text-slate-900 mb-3">
                 Community Voting
               </h4>
-              <p className="text-gray-600">
-                Let your community vote on what matters most to prioritize
-                development.
+              <p className="text-slate-500 leading-relaxed">
+                Empower your community to vote on what matters most to prioritize
+                development effectively.
               </p>
             </div>
 
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <div className="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center mb-4">
+            <div className="bg-white rounded-lg border border-slate-200 p-8 shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-12 h-12 rounded-lg bg-purple-50 flex items-center justify-center mb-6">
                 <svg
                   className="w-6 h-6 text-purple-600"
                   fill="none"
@@ -392,12 +430,12 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">
+              <h4 className="text-xl font-semibold text-slate-900 mb-3">
                 Track Progress
               </h4>
-              <p className="text-gray-600">
+              <p className="text-slate-500 leading-relaxed">
                 Monitor ticket status and keep your community informed on
-                development.
+                development milestones.
               </p>
             </div>
           </div>

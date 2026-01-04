@@ -37,7 +37,6 @@ export default function RedditDigestPage() {
     } else if (status === 'authenticated' && session?.user?.id) {
       fetchUserOrganization();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status, session]);
 
   const fetchUserOrganization = async () => {
@@ -48,6 +47,7 @@ export default function RedditDigestPage() {
         const ownedOrgs = data.organizations.filter(
           (org: Organization) => org.createdBy === session?.user?.id
         );
+
         // Only prefill if search term is empty to avoid overwriting user input
         if (ownedOrgs.length > 0 && searchTerm === '') {
           setSearchTerm(ownedOrgs[0].name);

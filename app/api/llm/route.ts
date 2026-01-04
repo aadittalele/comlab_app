@@ -3,7 +3,6 @@ import { callSnowflakeLLM } from '@/lib/snowflakeLLM';
 import { auth } from '@/lib/auth';
 
 export async function POST(req: NextRequest) {
-  // Require authentication to prevent abuse
   const session = await auth();
   if (!session?.user?.id) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });

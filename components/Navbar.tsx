@@ -116,7 +116,7 @@ export default function Navbar() {
                   <span className="text-sm font-medium text-gray-700">
                     {session.user.firstName || session.user.email}
                   </span>
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-white font-semibold">
+                  <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-semibold">
                     {(session.user.firstName?.[0] ||
                       session.user.email?.[0] ||
                       "U"
